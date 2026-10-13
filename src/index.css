@@ -1,0 +1,73 @@
+/* estilos generales de toda la pagina (css tradicional, clase 5)
+   la idea es que se vea como dulce realeza: simple y calido,
+   sacado del logo redondo color arena con letras cafe
+   colores: crema #f7f1e8, arena #e8dccb, cafe #4a3628, mostaza #6b5414 */
+
+/* aca arrancan los estilos base */
+body {
+  background-color: #f7f1e8;
+  color: #4a3628;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: 'Arial Narrow', Arial, sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* esto es del apunte de diseño responsivo: que las imagenes no se salgan de la pantalla */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: #4a3628;
+}
+/* aca terminan los estilos base */
+
+/* textito chico con letras separadas, igual al "panaderia · cafeteria" del logo */
+.texto-chico {
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #6b5414;
+}
+
+/* aca arranca la grilla de productos (la usan inicio y productos)
+   mobile first: 1 columna en el celu, 2 en tablet y 4 en la compu */
+.grilla {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+@media (min-width: 576px) {
+  .grilla {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 992px) {
+  .grilla {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
+/* aca termina la grilla */
+
+/* aca arranca el footer */
+.pie {
+  margin-top: 48px;
+  padding: 24px 16px;
+  text-align: center;
+  border-top: 1px solid #e8dccb;
+  color: #7a6655;
+}
+
+.pie p {
+  margin: 4px 0;
+}
+/* aca termina el footer */

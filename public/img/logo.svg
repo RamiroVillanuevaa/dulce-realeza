@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <circle cx="100" cy="100" r="100" fill="#cdb99c"/>
+  <text x="100" y="104" text-anchor="middle" font-family="'Barlow Condensed', 'Arial Narrow', sans-serif" font-weight="600" font-size="27" letter-spacing="1" fill="#6e5640">DULCE REALEZA</text>
+  <text x="100" y="124" text-anchor="middle" font-family="'Barlow Condensed', 'Arial Narrow', sans-serif" font-size="8.5" letter-spacing="3" fill="#6e5640">PANADERÍA · CAFETERÍA</text>
+</svg>

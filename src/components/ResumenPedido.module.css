@@ -1,0 +1,53 @@
+/* aca arranca el resumen del pedido (el comprobante) */
+.resumen {
+  background-color: #fffbf5;
+  border: 1px solid #e8dccb;
+  border-radius: 16px;
+  padding: 28px 24px;
+}
+
+.titulo {
+  font-size: 2rem;
+}
+
+.bajada {
+  color: #7a6655;
+}
+
+.subtitulo {
+  font-size: 1.1rem;
+  margin-top: 24px;
+  border-bottom: 1px solid #e8dccb;
+  padding-bottom: 6px;
+}
+
+/* la lista sin los puntitos de costumbre */
+.lista {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* cada renglon: el producto a la izquierda y el precio a la derecha */
+.renglon {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 6px 0;
+}
+
+.total {
+  border-top: 1px solid #e8dccb;
+  padding-top: 10px;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.dato {
+  margin: 4px 0;
+}
+
+.boton {
+  margin-top: 24px;
+}
+/* aca termina el resumen del pedido */

@@ -1,0 +1,80 @@
+/* aca arranca la pagina del carrito */
+.carrito {
+  padding-top: 40px;
+}
+
+/* mobile first: en el celu la lista arriba y el resumen abajo */
+.contenido {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  align-items: start;
+  margin-top: 16px;
+}
+
+/* en la compu la lista ocupa dos partes y el resumen una */
+@media (min-width: 992px) {
+  .contenido {
+    grid-template-columns: 2fr 1fr;
+  }
+}
+
+.lista {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.resumen {
+  background-color: #fffbf5;
+  border: 1px solid #e8dccb;
+  border-radius: 16px;
+  padding: 24px;
+}
+
+.subtitulo {
+  font-size: 1.3rem;
+}
+
+/* cada renglon del resumen: el texto a la izquierda y el numero a la derecha */
+.fila {
+  display: flex;
+  justify-content: space-between;
+  margin: 8px 0;
+}
+
+.total {
+  border-top: 1px solid #e8dccb;
+  padding-top: 12px;
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.boton {
+  display: block;
+  width: 100%;
+  margin-top: 12px;
+}
+/* aca termina la pagina del carrito */
+
+/* el mensaje de carrito vacio */
+.vacio {
+  text-align: center;
+  padding-top: 64px;
+  padding-bottom: 64px;
+}
+
+/* el formulario y el resumen del pedido no ocupan todo el ancho: como mucho 640px y centrados */
+.angosto {
+  max-width: 640px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 40px;
+}
+
+/* el renglon con la cantidad y el total arriba del formulario */
+.pedidoCorto {
+  background-color: #e8dccb;
+  border-radius: 10px;
+  padding: 10px 14px;
+}

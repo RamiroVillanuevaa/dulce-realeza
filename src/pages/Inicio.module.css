@@ -1,0 +1,139 @@
+/* aca arranca la portada */
+.portada {
+  background-color: #e8dccb;
+  padding-top: 48px;
+  padding-bottom: 48px;
+}
+
+/* mobile first: en el celu el texto arriba y el logo abajo */
+.portadaContenido {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+}
+
+.titulo {
+  font-size: 2.6rem;
+  margin-top: 8px;
+  margin-bottom: 16px;
+}
+
+.bajada {
+  font-size: 1.1rem;
+  color: #7a6655;
+}
+
+.acciones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.logo {
+  width: 240px;
+  border-radius: 50%;
+}
+
+/* en la compu el texto y el logo van uno al lado del otro */
+@media (min-width: 992px) {
+  .portadaContenido {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .titulo {
+    font-size: 4rem;
+  }
+
+  .logo {
+    width: 320px;
+  }
+}
+/* aca termina la portada */
+
+/* titulo de cada bloque */
+.tituloSeccion {
+  text-align: center;
+  font-size: 2.2rem;
+  margin-top: 48px;
+  margin-bottom: 24px;
+}
+
+.centrado {
+  text-align: center;
+  margin-top: 24px;
+}
+
+/* aca arrancan los cuadraditos de categoria
+   2 columnas en el celu, 3 en tablet y 5 en la compu */
+.categorias {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+@media (min-width: 768px) {
+  .categorias {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@media (min-width: 992px) {
+  .categorias {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  }
+}
+
+.categoria {
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  background-color: #fffbf5;
+  border: 1px solid #e8dccb;
+  border-radius: 16px;
+  overflow: hidden;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.categoria span {
+  display: block;
+  padding: 10px;
+}
+
+.categoria:hover {
+  border-color: #4a3628;
+}
+/* aca terminan las categorias */
+
+/* aca arrancan los 3 pasos: uno abajo del otro en el celu, en fila en la compu */
+.pasos {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+@media (min-width: 768px) {
+  .pasos {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+.paso {
+  background-color: #fffbf5;
+  border: 1px solid #e8dccb;
+  border-radius: 16px;
+  padding: 24px;
+  text-align: center;
+}
+
+.numero {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #6b5414;
+  margin-bottom: 0;
+}
+/* aca terminan los pasos */

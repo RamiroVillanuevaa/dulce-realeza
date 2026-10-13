@@ -1,0 +1,72 @@
+/* aca arranca la fila del carrito
+   mobile first: en el celu las cosas se acomodan en dos renglones (flex-wrap) */
+.item {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px;
+  background-color: #fffbf5;
+  border: 1px solid #e8dccb;
+  border-radius: 16px;
+  padding: 16px;
+}
+
+.imagen {
+  width: 72px;
+  height: 72px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+/* la info ocupa todo el espacio que sobra al lado de la foto */
+.info {
+  flex: 1;
+}
+
+.nombre {
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+.unitario {
+  margin: 4px 0 0 0;
+  color: #7a6655;
+}
+
+.cantidad {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.numero {
+  min-width: 24px;
+  text-align: center;
+  font-weight: 700;
+}
+
+.final {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-left: auto;
+}
+
+.subtotal {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+/* en tablet y compu todo entra en un solo renglon */
+@media (min-width: 768px) {
+  .item {
+    flex-wrap: nowrap;
+  }
+
+  .final {
+    min-width: 200px;
+    justify-content: flex-end;
+  }
+}
+/* aca termina la fila del carrito */

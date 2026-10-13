@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#efe3cf"/>
+      <stop offset="1" stop-color="#dcc6a4"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#g)"/>
+  <circle cx="400" cy="300" r="190" fill="#f7f1e8" fill-opacity="0.55"/>
+  <circle cx="400" cy="300" r="172" fill="none" stroke="#4a3628" stroke-opacity="0.18" stroke-width="2"/>
+  <text x="400" y="230" text-anchor="middle" font-family="'Barlow Condensed', 'Arial Narrow', sans-serif" font-size="18" letter-spacing="7" fill="#6b5414">PANADERÍA</text>
+  <text x="400" y="290" text-anchor="middle" font-family="'Barlow Condensed', 'Arial Narrow', sans-serif" font-weight="600" font-size="40" letter-spacing="2" fill="#4a3628">MEDIALUNAS DE</text>
+  <text x="400" y="336" text-anchor="middle" font-family="'Barlow Condensed', 'Arial Narrow', sans-serif" font-weight="600" font-size="40" letter-spacing="2" fill="#4a3628">MANTECA (DOCENA)</text>
+  <text x="400" y="400" text-anchor="middle" font-family="'Barlow Condensed', 'Arial Narrow', sans-serif" font-size="15" letter-spacing="6" fill="#4a3628" fill-opacity="0.6">FOTO PRÓXIMAMENTE</text>
+</svg>

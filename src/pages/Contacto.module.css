@@ -1,0 +1,72 @@
+/* aca arranca la pagina de contacto
+   el contenido no ocupa todo el ancho: como mucho 640px y centrado */
+.contacto {
+  max-width: 640px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 40px;
+}
+
+.bajada {
+  color: #7a6655;
+}
+
+/* la caja clarita donde va el formulario (o el gracias) */
+.caja {
+  background-color: #fffbf5;
+  border: 1px solid #e8dccb;
+  border-radius: 16px;
+  padding: 24px;
+}
+
+/* mobile first: en el celu un campo abajo del otro, desde tablet de a dos */
+.fila {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0 16px;
+}
+
+@media (min-width: 576px) {
+  .fila {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.etiqueta {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 700;
+  margin-top: 14px;
+  margin-bottom: 6px;
+}
+
+.campo {
+  display: block;
+  width: 100%;
+  margin-top: 6px;
+  background-color: #ffffff;
+  border: 1px solid #e8dccb;
+  border-radius: 10px;
+  padding: 8px 12px;
+  font-weight: 400;
+}
+
+/* el borde se pone rojo si el campo tiene error */
+.campoError {
+  border-color: #9a3b2a;
+}
+
+.error {
+  display: block;
+  color: #9a3b2a;
+  font-size: 0.85rem;
+  font-weight: 400;
+  margin-top: 4px;
+}
+
+.boton {
+  display: block;
+  width: 100%;
+  margin-top: 24px;
+}
+/* aca termina la pagina de contacto */

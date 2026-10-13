@@ -1,0 +1,109 @@
+/* aca arranca el formulario */
+.formulario {
+  background-color: #fffbf5;
+  border: 1px solid #e8dccb;
+  border-radius: 16px;
+  padding: 24px;
+}
+
+/* cada fila del formulario (nombre y apellido, email y telefono)
+   mobile first: en el celu un campo abajo del otro, desde tablet de a dos */
+.fila {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0 16px;
+}
+
+@media (min-width: 576px) {
+  .fila {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.etiqueta {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 700;
+  margin-top: 14px;
+  margin-bottom: 6px;
+}
+
+.campo {
+  display: block;
+  width: 100%;
+  margin-top: 6px;
+  background-color: #ffffff;
+  border: 1px solid #e8dccb;
+  border-radius: 10px;
+  padding: 8px 12px;
+  font-weight: 400;
+}
+
+/* el borde se pone rojo si el campo tiene error */
+.campoError {
+  border-color: #9a3b2a;
+}
+
+.error {
+  display: block;
+  color: #9a3b2a;
+  font-size: 0.85rem;
+  font-weight: 400;
+  margin-top: 4px;
+}
+
+/* los dos botones del tipo de entrega (iguales a los de los filtros) */
+.opciones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.opcion {
+  background-color: #fffbf5;
+  border: 1px solid #e8dccb;
+  border-radius: 20px;
+  color: #4a3628;
+  font-weight: 600;
+  padding: 6px 16px;
+}
+
+.activo {
+  background-color: #4a3628;
+  border-color: #4a3628;
+  color: #f7f1e8;
+}
+
+/* aca arranca la lista de locales para retirar */
+.locales {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* cada local es un boton con el nombre arriba y la direccion abajo */
+.local {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  background-color: #ffffff;
+  border: 1px solid #e8dccb;
+  border-radius: 10px;
+  color: #4a3628;
+  padding: 10px 14px;
+}
+
+/* el local elegido lleva el borde cafe mas grueso */
+.localElegido {
+  border: 2px solid #4a3628;
+}
+/* aca termina la lista de locales */
+
+.botones {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 24px;
+}
+/* aca termina el formulario */

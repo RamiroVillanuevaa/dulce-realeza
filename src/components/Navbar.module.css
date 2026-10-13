@@ -1,0 +1,98 @@
+/* aca arrancan los estilos de la navbar */
+
+.barra {
+  background-color: #f7f1e8;
+  border-bottom: 1px solid #e8dccb;
+}
+
+.contenido {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+/* logo y nombre */
+.marca {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #4a3628;
+  text-decoration: none;
+  font-family: 'Arial Narrow', Arial, sans-serif;
+  font-weight: 700;
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.marca:hover {
+  color: #33251b;
+}
+
+/* boton del celu */
+.botonMenu {
+  background-color: transparent;
+  border: 1px solid #4a3628;
+  border-radius: 8px;
+  color: #4a3628;
+  font-weight: 600;
+  padding: 6px 14px;
+}
+
+/* mobile first: en el celu el menu esta escondido y los links van uno abajo del otro */
+.menu {
+  display: none;
+  width: 100%;
+  flex-direction: column;
+  padding-top: 10px;
+}
+
+/* cuando tocan el boton se muestra */
+.menuAbierto {
+  display: flex;
+}
+
+.link {
+  color: #7a6655;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 8px 12px;
+}
+
+.link:hover {
+  color: #4a3628;
+}
+
+/* el link de la pagina donde estas */
+.activo {
+  color: #4a3628;
+  border-bottom: 2px solid #4a3628;
+}
+
+/* el numerito del carrito */
+.contador {
+  background-color: #4a3628;
+  color: #f7f1e8;
+  border-radius: 20px;
+  padding: 2px 8px;
+  font-size: 0.8rem;
+}
+
+/* en pantallas grandes el menu siempre se ve, en fila, y el boton se esconde */
+@media (min-width: 992px) {
+  .botonMenu {
+    display: none;
+  }
+
+  .menu {
+    display: flex;
+    flex-direction: row;
+    width: auto;
+    padding-top: 0;
+  }
+}
+
+/* aca terminan los estilos de la navbar */

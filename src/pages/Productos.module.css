@@ -1,0 +1,76 @@
+/* aca arranca el encabezado */
+.encabezado {
+  background-color: #e8dccb;
+  padding-top: 40px;
+  padding-bottom: 32px;
+  margin-bottom: 24px;
+}
+
+.titulo {
+  font-size: 2.6rem;
+}
+
+.bajada {
+  color: #7a6655;
+}
+
+@media (min-width: 992px) {
+  .titulo {
+    font-size: 3.6rem;
+  }
+}
+/* aca termina el encabezado */
+
+/* aca arrancan los filtros */
+.filtros {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+/* los botones redonditos de categoria y de stock */
+.chip {
+  background-color: #fffbf5;
+  border: 1px solid #e8dccb;
+  border-radius: 20px;
+  color: #4a3628;
+  font-weight: 600;
+  padding: 6px 16px;
+}
+
+.chip:hover {
+  border-color: #4a3628;
+}
+
+/* el boton que esta elegido */
+.activo {
+  background-color: #4a3628;
+  border-color: #4a3628;
+  color: #f7f1e8;
+}
+
+.buscador {
+  width: 100%;
+  background-color: #fffbf5;
+  border: 1px solid #e8dccb;
+  border-radius: 20px;
+  padding: 8px 16px;
+}
+
+/* en la compu el buscador no ocupa todo el ancho */
+@media (min-width: 768px) {
+  .buscador {
+    width: 50%;
+  }
+}
+/* aca terminan los filtros */
+
+.resultados {
+  color: #7a6655;
+}
+
+.vacio {
+  text-align: center;
+  padding: 48px 0;
+}
