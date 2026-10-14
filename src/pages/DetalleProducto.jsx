@@ -9,9 +9,9 @@ import styles from './DetalleProducto.module.css'
 function DetalleProducto(props) {
   // aca arranca la busqueda del producto
   // el id viene de la url (/producto/3) y llega como texto "3" (clase 7)
-  // por eso comparamos con == que compara el valor sin mirar el tipo: 3 == "3" da true
+  // por eso lo pasamos a numero con Number y despues comparamos con ===: Number("3") da 3
   const { id } = useParams()
-  const producto = productos.find(p => p.id == id)
+  const producto = productos.find(p => p.id === Number(id))
   // aca termina la busqueda del producto
 
   // esto es para mostrar el cartelito de "lo sumaste al carrito"
