@@ -1,4 +1,5 @@
 // aca arrancan los imports
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import Button from 'react-bootstrap/Button'
 import styles from './ProductoCard.module.css'
@@ -7,6 +8,20 @@ import styles from './ProductoCard.module.css'
 function ProductoCard(props) {
   const producto = props.producto
   const sinStock = producto.stock === 0
+
+  // el texto del cartelito que aparece al tocar agregar ('' = no se muestra nada)
+  const [mensaje, setMensaje] = useState('')
+
+  // agregarAlCarrito nos dice con true o false si lo pudo sumar
+  // y segun eso elegimos el texto del cartel (igual que en el detalle)
+  function manejarAgregar() {
+    const seAgrego = props.agregarAlCarrito(producto)
+    if (seAgrego) {
+      setMensaje('¡Sumado al carrito!')
+    } else {
+      setMensaje('No queda más stock.')
+    }
+  }
 
   return (
     // aca arranca la card del producto (con las clases "card" de bootstrap)
@@ -35,11 +50,14 @@ function ProductoCard(props) {
         {/* aca arrancan los botones, si no hay stock el de agregar se desactiva */}
         <div className={styles.botones}>
           <Link to={`/producto/${producto.id}`} className="btn btn-outline-dark">Ver detalle</Link>
-          <Button variant="dark" onClick={() => props.agregarAlCarrito(producto)} disabled={sinStock}>
+          <Button variant="dark" onClick={manejarAgregar} disabled={sinStock}>
             {sinStock ? 'Sin stock' : 'Agregar'}
           </Button>
         </div>
         {/* aca terminan los botones */}
+
+        {/* el cartelito solo aparece despues de tocar agregar */}
+        {mensaje !== '' ? <p className={styles.mensaje}>{mensaje}</p> : null}
       </div>
       {/* aca termina la info del producto */}
     </div>

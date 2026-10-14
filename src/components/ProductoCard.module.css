@@ -67,4 +67,12 @@
   margin-top: auto;
 }
 
+/* cartelito que aparece abajo de los botones al agregar */
+.mensaje {
+  margin: 10px 0 0;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #6b5414;
+}
+
 /* aca terminan los estilos de la card */

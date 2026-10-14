@@ -14,8 +14,8 @@ function DetalleProducto(props) {
   const producto = productos.find(p => p.id === Number(id))
   // aca termina la busqueda del producto
 
-  // esto es para mostrar el cartelito de "lo sumaste al carrito"
-  const [agregado, setAgregado] = useState(false)
+  // el texto del cartelito que aparece al tocar agregar ('' = no se muestra nada)
+  const [mensaje, setMensaje] = useState('')
 
   // aca arranca el caso de producto que no existe (por ej /producto/999)
   // find no encontro nada y devolvio undefined
@@ -32,9 +32,15 @@ function DetalleProducto(props) {
 
   const sinStock = producto.stock === 0
 
+  // agregarAlCarrito nos dice con true o false si lo pudo sumar
+  // y segun eso elegimos el texto del cartel
   function manejarAgregar() {
-    props.agregarAlCarrito(producto)
-    setAgregado(true)
+    const seAgrego = props.agregarAlCarrito(producto)
+    if (seAgrego) {
+      setMensaje('Listo, lo sumaste al carrito.')
+    } else {
+      setMensaje('Ya tenés en el carrito todo el stock disponible.')
+    }
   }
 
   return (
@@ -78,9 +84,9 @@ function DetalleProducto(props) {
         {/* aca terminan los botones */}
 
         {/* el cartelito solo aparece despues de tocar agregar */}
-        {agregado ? (
+        {mensaje !== '' ? (
           <p className={styles.confirmacion}>
-            Listo, lo sumaste al carrito. <Link to="/carrito">Ver carrito</Link>
+            {mensaje} <Link to="/carrito">Ver carrito</Link>
           </p>
         ) : null}
       </div>

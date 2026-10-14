@@ -47,10 +47,12 @@ function App() {
     }
   }
 
+  // devuelve true si lo pudo sumar y false si ya no queda stock,
+  // asi el boton que la llamo sabe que cartel mostrar
   function agregarAlCarrito(producto) {
     const existente = carrito.find(item => item.id === producto.id) //busca en el carro si hay un producto con la misma id
     if (existente) { //si existe y la cantidad es menor al stock de ese producto, agrega ese producto +1 cada vez q se toca el boton
-      if (existente.cantidad >= producto.stock) return // pero no lo deja pasarse del stock
+      if (existente.cantidad >= producto.stock) return false // pero no lo deja pasarse del stock
       setCarrito(carrito.map(item =>
         item.id === producto.id ? copiarConCantidad(item, item.cantidad + 1) : item
       ))
@@ -60,6 +62,7 @@ function App() {
       nuevoCarrito.push(copiarConCantidad(producto, 1))
       setCarrito(nuevoCarrito)
     }
+    return true
   }
 
   // sumaOResta viene +1 o -1 segun el boton que toquen dentro de carrito
