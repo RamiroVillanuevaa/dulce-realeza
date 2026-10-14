@@ -48,21 +48,21 @@ function App() {
   }
 
   function agregarAlCarrito(producto) {
-    const existente = carrito.find(item => item.id === producto.id)
-    if (existente) {
-      if (existente.cantidad >= producto.stock) return // no dejamos pasarnos del stock
+    const existente = carrito.find(item => item.id === producto.id) //busca en el carro si hay un producto con la misma id
+    if (existente) { //si existe y la cantidad es menor al stock de ese producto, agrega ese producto +1 cada vez q se toca el boton
+      if (existente.cantidad >= producto.stock) return // pero no lo deja pasarse del stock
       setCarrito(carrito.map(item =>
         item.id === producto.id ? copiarConCantidad(item, item.cantidad + 1) : item
       ))
     } else {
-      // arma carrito en un array nuevo y hace pushs
+      // arma carrito en un array nuevo y hace push para colocar ese item al final del array (visualmente en la pag, abajo del ultimo producto agregado)
       const nuevoCarrito = carrito.map(item => item)
       nuevoCarrito.push(copiarConCantidad(producto, 1))
       setCarrito(nuevoCarrito)
     }
   }
 
-  // sumaOResta viene +1 o -1 segun el boton que toquen
+  // sumaOResta viene +1 o -1 segun el boton que toquen dentro de carrito
   function cambiarCantidad(id, sumaOResta) {
     setCarrito(carrito.map(item => {
       if (item.id !== id) return item

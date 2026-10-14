@@ -9,9 +9,8 @@ function ProductoCard(props) {
   const sinStock = producto.stock === 0
 
   return (
-    // aca arranca la card del producto (con las clases "card" de bootstrap, como en la clase 5)
+    // aca arranca la card del producto (con las clases "card" de bootstrap)
     <div className={`card ${styles.card}`}>
-      {/* si no hay stock le sumamos una clase que pone la foto mas clarita */}
       <img
         src={producto.imagen}
         alt={producto.nombre}
@@ -23,7 +22,6 @@ function ProductoCard(props) {
         <p className={styles.categoria}>{producto.categoria}</p>
         <h5 className="card-title">{producto.nombre}</h5>
 
-        {/* la etiqueta (Nuevo, Oferta, Más vendido) solo se muestra si el producto tiene una */}
         {producto.etiqueta !== '' ? <span className={styles.etiqueta}>{producto.etiqueta}</span> : null}
 
         <p className="card-text">{producto.descripcion}</p>

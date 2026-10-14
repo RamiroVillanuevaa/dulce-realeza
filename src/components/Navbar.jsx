@@ -5,7 +5,6 @@ import styles from './Navbar.module.css'
 // aca terminan los imports
 
 function Navbar(props) {
-  // en el celu el menu arranca cerrado, el boton "Menú" lo abre y lo cierra
   const [menuAbierto, setMenuAbierto] = useState(false)
 
   function cerrarMenu() {
@@ -20,12 +19,12 @@ function Navbar(props) {
     // aca arranca la navbar
     <header className={styles.barra}>
       <div className={`container ${styles.contenido}`}>
-        {/* aca arranca el logo con el nombre, si lo tocan te lleva al inicio */}
+        {}
         <Link to="/" className={styles.marca} onClick={cerrarMenu}>
-          <img src="/img/logo.svg" alt="Logo de Dulce Realeza" width="44" height="44" />
+          <img src="/dulce-realeza/img/logo.svg" alt="Logo de Dulce Realeza" width="44" height="44" />
           <span>Dulce Realeza</span>
         </Link>
-        {/* aca termina el logo */}
+        {}
 
         {/* boton que aparece solo en el celu, da vuelta el estado del menu */}
         <button className={styles.botonMenu} onClick={() => setMenuAbierto(!menuAbierto)}>

@@ -7,11 +7,11 @@ import styles from './Inicio.module.css'
 
 // las categorias de la tienda, cada una con la foto que la representa
 const categorias = [
-  { nombre: 'Pastelería', imagen: '/img/cheesecake-oreo.svg' },
-  { nombre: 'Panadería', imagen: '/img/medialunas.svg' },
-  { nombre: 'Salados', imagen: '/img/tostado.svg' },
-  { nombre: 'Cafetería', imagen: '/img/cafe-con-leche.svg' },
-  { nombre: 'Regalos', imagen: '/img/caja-regalo.svg' }
+  { nombre: 'Pastelería', imagen: '/dulce-realeza/img/cheesecake-oreo.svg' },
+  { nombre: 'Panadería', imagen: '/dulce-realeza/img/medialunas.svg' },
+  { nombre: 'Salados', imagen: '/dulce-realeza/img/tostado.svg' },
+  { nombre: 'Cafetería', imagen: '/dulce-realeza/img/cafe-con-leche.svg' },
+  { nombre: 'Regalos', imagen: '/dulce-realeza/img/caja-regalo.svg' }
 ]
 
 function Inicio(props) {
@@ -39,7 +39,7 @@ function Inicio(props) {
               </Link>
             </div>
           </div>
-          <img src="/img/logo.svg" alt="Logo de Dulce Realeza" className={styles.logo} />
+          <img src="/dulce-realeza/img/logo.svg" alt="Logo de Dulce Realeza" className={styles.logo} />
         </div>
       </section>
       {/* aca termina la portada */}

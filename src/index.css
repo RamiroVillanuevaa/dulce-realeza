@@ -1,6 +1,4 @@
-/* estilos generales de toda la pagina (css tradicional, clase 5)
-   la idea es que se vea como dulce realeza: simple y calido,
-   sacado del logo redondo color arena con letras cafe
+/* estilos generales de toda la pagina
    colores: crema #f7f1e8, arena #e8dccb, cafe #4a3628, mostaza #6b5414 */
 
 /* aca arrancan los estilos base */
@@ -28,7 +26,7 @@ a {
 }
 /* aca terminan los estilos base */
 
-/* textito chico con letras separadas, igual al "panaderia · cafeteria" del logo */
+/* texto chico con letras separadas, igual al "panaderia cafeteria" del logo */
 .texto-chico {
   font-size: 0.85rem;
   font-weight: 700;
@@ -37,8 +35,7 @@ a {
   color: #6b5414;
 }
 
-/* aca arranca la grilla de productos (la usan inicio y productos)
-   mobile first: 1 columna en el celu, 2 en tablet y 4 en la compu */
+/* aca arranca la grilla de productos (la usan inicio y productos)*/
 .grilla {
   display: grid;
   grid-template-columns: 1fr;

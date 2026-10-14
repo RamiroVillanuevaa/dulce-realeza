@@ -9,8 +9,9 @@ import App from './App.jsx'
 
 // aca arranca el render de toda la app (igual que en la clase 7)
 // el BrowserRouter envuelve todo para que las rutas anden en cualquier lado
+// basename: en github pages todas las rutas cuelgan de /dulce-realeza/
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <BrowserRouter>
+  <BrowserRouter basename="/dulce-realeza">
     <App />
   </BrowserRouter>
 )
