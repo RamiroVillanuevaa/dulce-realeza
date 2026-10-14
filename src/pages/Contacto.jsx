@@ -19,8 +19,10 @@ function Contacto() {
   const [enviado, setEnviado] = useState(false)
 
   // aca arranca el envio
-  // se llama con el onClick del boton, revisa los campos uno por uno (estructuras de control)
-  function enviarConsulta() {
+  // se llama con el onSubmit del formulario, revisa los campos uno por uno (estructuras de control)
+  // preventDefault frena el comportamiento normal del form, que es recargar la pagina
+  function enviarConsulta(e) {
+    e.preventDefault()
     const nuevosErrores = { nombre: '', apellido: '', email: '', telefono: '', mensaje: '' }
     let hayErrores = false
 
@@ -77,17 +79,18 @@ function Contacto() {
           <p>Recibimos tu mensaje. Te vamos a responder a {email} o al {telefono}.</p>
         </div>
       ) : (
-        <div className={styles.caja}>
+        // formulario controlado: cada input muestra lo que hay en su estado (value) y lo actualiza con onChange
+        <form className={styles.caja} onSubmit={enviarConsulta}>
           {/* aca arranca la fila de nombre y apellido */}
           <div className={styles.fila}>
             <label className={styles.etiqueta}>
               Nombre *
-              <input type="text" className={claseCampo(errores.nombre)} onChange={e => setNombre(e.target.value)} />
+              <input type="text" className={claseCampo(errores.nombre)} value={nombre} onChange={e => setNombre(e.target.value)} />
               {errores.nombre !== '' ? <span className={styles.error}>{errores.nombre}</span> : null}
             </label>
             <label className={styles.etiqueta}>
               Apellido *
-              <input type="text" className={claseCampo(errores.apellido)} onChange={e => setApellido(e.target.value)} />
+              <input type="text" className={claseCampo(errores.apellido)} value={apellido} onChange={e => setApellido(e.target.value)} />
               {errores.apellido !== '' ? <span className={styles.error}>{errores.apellido}</span> : null}
             </label>
           </div>
@@ -97,12 +100,12 @@ function Contacto() {
           <div className={styles.fila}>
             <label className={styles.etiqueta}>
               Email *
-              <input type="text" className={claseCampo(errores.email)} onChange={e => setEmail(e.target.value)} />
+              <input type="text" className={claseCampo(errores.email)} value={email} onChange={e => setEmail(e.target.value)} />
               {errores.email !== '' ? <span className={styles.error}>{errores.email}</span> : null}
             </label>
             <label className={styles.etiqueta}>
               Teléfono *
-              <input type="text" className={claseCampo(errores.telefono)} onChange={e => setTelefono(e.target.value)} />
+              <input type="text" className={claseCampo(errores.telefono)} value={telefono} onChange={e => setTelefono(e.target.value)} />
               {errores.telefono !== '' ? <span className={styles.error}>{errores.telefono}</span> : null}
             </label>
           </div>
@@ -115,15 +118,16 @@ function Contacto() {
               rows="5"
               className={claseCampo(errores.mensaje)}
               placeholder="Contanos qué necesitás..."
+              value={mensaje}
               onChange={e => setMensaje(e.target.value)}
             />
             {errores.mensaje !== '' ? <span className={styles.error}>{errores.mensaje}</span> : null}
           </label>
 
-          <Button variant="dark" className={styles.boton} onClick={enviarConsulta}>
+          <Button variant="dark" className={styles.boton} type="submit">
             Enviar mensaje
           </Button>
-        </div>
+        </form>
       )}
     </section>
     // aca termina la pagina de contacto

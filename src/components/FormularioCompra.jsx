@@ -31,8 +31,10 @@ function FormularioCompra(props) {
   }
 
   // aca arranca la confirmacion
-  // se llama con el onClick del boton, revisa los campos uno por uno (estructuras de control)
-  function confirmarCompra() {
+  // se llama con el onSubmit del formulario, revisa los campos uno por uno (estructuras de control)
+  // preventDefault frena el comportamiento normal del form, que es recargar la pagina
+  function confirmarCompra(e) {
+    e.preventDefault()
     const nuevosErrores = { nombre: '', apellido: '', email: '', telefono: '', direccion: '' }
     let hayErrores = false
 
@@ -89,18 +91,19 @@ function FormularioCompra(props) {
 
   return (
     // aca arranca el formulario
-    <div className={styles.formulario}>
+    // es controlado: cada input muestra lo que hay en su estado (value) y lo actualiza con onChange
+    <form className={styles.formulario} onSubmit={confirmarCompra}>
       {/* aca arranca la fila de nombre y apellido
           cada onChange guarda lo que escriben en su estado, igual que el ejemplo de la clase 5 */}
       <div className={styles.fila}>
         <label className={styles.etiqueta}>
           Nombre *
-          <input type="text" className={claseCampo(errores.nombre)} onChange={e => setNombre(e.target.value)} />
+          <input type="text" className={claseCampo(errores.nombre)} value={nombre} onChange={e => setNombre(e.target.value)} />
           {errores.nombre !== '' ? <span className={styles.error}>{errores.nombre}</span> : null}
         </label>
         <label className={styles.etiqueta}>
           Apellido *
-          <input type="text" className={claseCampo(errores.apellido)} onChange={e => setApellido(e.target.value)} />
+          <input type="text" className={claseCampo(errores.apellido)} value={apellido} onChange={e => setApellido(e.target.value)} />
           {errores.apellido !== '' ? <span className={styles.error}>{errores.apellido}</span> : null}
         </label>
       </div>
@@ -110,28 +113,31 @@ function FormularioCompra(props) {
       <div className={styles.fila}>
         <label className={styles.etiqueta}>
           Email *
-          <input type="text" className={claseCampo(errores.email)} onChange={e => setEmail(e.target.value)} />
+          <input type="text" className={claseCampo(errores.email)} value={email} onChange={e => setEmail(e.target.value)} />
           {errores.email !== '' ? <span className={styles.error}>{errores.email}</span> : null}
         </label>
         <label className={styles.etiqueta}>
           Teléfono *
-          <input type="text" className={claseCampo(errores.telefono)} onChange={e => setTelefono(e.target.value)} />
+          <input type="text" className={claseCampo(errores.telefono)} value={telefono} onChange={e => setTelefono(e.target.value)} />
           {errores.telefono !== '' ? <span className={styles.error}>{errores.telefono}</span> : null}
         </label>
       </div>
       {/* aca termina la fila de email y telefono */}
 
       {/* aca arranca el tipo de entrega
-          son dos botones, el elegido lleva la clase "activo" (igual que los filtros de productos) */}
+          son dos botones, el elegido lleva la clase "activo" (igual que los filtros de productos)
+          llevan type="button" porque adentro de un form un boton manda el formulario si no se lo aclaramos */}
       <p className={styles.etiqueta}>Tipo de entrega</p>
       <div className={styles.opciones}>
         <button
+          type="button"
           className={entrega === 'Envío a domicilio' ? `${styles.opcion} ${styles.activo}` : styles.opcion}
           onClick={() => elegirEntrega('Envío a domicilio')}
         >
           Envío a domicilio
         </button>
         <button
+          type="button"
           className={entrega === 'Retiro en el local' ? `${styles.opcion} ${styles.activo}` : styles.opcion}
           onClick={() => elegirEntrega('Retiro en el local')}
         >
@@ -149,6 +155,7 @@ function FormularioCompra(props) {
             type="text"
             className={claseCampo(errores.direccion)}
             placeholder="Calle, número y localidad"
+            value={direccion}
             onChange={e => setDireccion(e.target.value)}
           />
           {errores.direccion !== '' ? <span className={styles.error}>{errores.direccion}</span> : null}
@@ -159,6 +166,7 @@ function FormularioCompra(props) {
           <div className={styles.locales}>
             {locales.map(direccionLocal => (
               <button
+                type="button"
                 key={direccionLocal}
                 className={direccionLocal === local ? `${styles.local} ${styles.localElegido}` : styles.local}
                 onClick={() => setLocal(direccionLocal)}
@@ -178,17 +186,19 @@ function FormularioCompra(props) {
           type="text"
           className={styles.campo}
           placeholder="Por ejemplo: timbre 2B, sin azúcar..."
+          value={nota}
           onChange={e => setNota(e.target.value)}
         />
       </label>
 
       {/* aca arrancan los botones: confirmar o volver a la lista del carrito */}
       <div className={styles.botones}>
-        <Button variant="outline-dark" onClick={props.volver}>Volver al carrito</Button>
-        <Button variant="dark" onClick={confirmarCompra}>Confirmar compra</Button>
+        <Button variant="outline-dark" type="button" onClick={props.volver}>Volver al carrito</Button>
+        {/* type="submit": al tocarlo se dispara el onSubmit del form */}
+        <Button variant="dark" type="submit">Confirmar compra</Button>
       </div>
       {/* aca terminan los botones */}
-    </div>
+    </form>
     // aca termina el formulario
   )
 }
