@@ -8,7 +8,7 @@ import Productos from './pages/Productos'
 import DetalleProducto from './pages/DetalleProducto'
 import Carrito from './pages/Carrito'
 import Contacto from './pages/Contacto'
-// aca terminan los imports
+
 
 function App() {
   // aca arranca el estado del carrito
@@ -16,7 +16,7 @@ function App() {
   const [carrito, setCarrito] = useState([])
   // aca termina el estado del carrito
 
-  // aca arranca el scroll (es el ejemplo de la clase 7 de url y hash)
+  // aca arranca el scroll
   // cada vez que cambia la url:
   // - si tiene hash (por ej /#como-comprar) bajamos hasta esa seccion
   // - si no tiene, subimos hasta arriba, asi cada pagina nueva arranca desde el principio
@@ -55,18 +55,18 @@ function App() {
         item.id === producto.id ? copiarConCantidad(item, item.cantidad + 1) : item
       ))
     } else {
-      // el map arma un array nuevo igual al carrito, y a ese array nuevo le hacemos push
+      // arma carrito en un array nuevo y hace pushs
       const nuevoCarrito = carrito.map(item => item)
       nuevoCarrito.push(copiarConCantidad(producto, 1))
       setCarrito(nuevoCarrito)
     }
   }
 
-  // delta viene +1 o -1 segun el boton que toquen
-  function cambiarCantidad(id, delta) {
+  // sumaOResta viene +1 o -1 segun el boton que toquen
+  function cambiarCantidad(id, sumaOResta) {
     setCarrito(carrito.map(item => {
       if (item.id !== id) return item
-      const nuevaCantidad = item.cantidad + delta
+      const nuevaCantidad = item.cantidad + sumaOResta
       if (nuevaCantidad < 1 || nuevaCantidad > item.stock) return item
       return copiarConCantidad(item, nuevaCantidad)
     }))
