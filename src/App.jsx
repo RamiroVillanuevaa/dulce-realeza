@@ -12,14 +12,20 @@ import Contacto from './pages/Contacto'
 
 function App() {
   // aca arranca el estado del carrito
-  // el carrito vive aca en App y se lo pasamos por props a las paginas que lo usan
-  const [carrito, setCarrito] = useState([])
-  // aca termina el estado del carrito
+  // el carrito esta en App y se lo pasamos por props a las paginas
+  const [carrito, setCarrito] = useState(() => {
+    const guardado = localStorage.getItem('dulce-realeza-carrito')
+    return guardado ? JSON.parse(guardado) : []
+  })
+  useEffect(() => {
+    localStorage.setItem('dulce-realeza-carrito', JSON.stringify(carrito))
+  }, [carrito])
 
-  // aca arranca el scroll
+  
+  //  arranca el scroll
   // cada vez que cambia la url:
-  // - si tiene hash (por ej /#como-comprar) bajamos hasta esa seccion
-  // - si no tiene, subimos hasta arriba, asi cada pagina nueva arranca desde el principio
+  //  si tiene hash (por ej /#como-comprar) bajamos hasta esa seccion
+  //  si no tiene, subimos hasta arriba, asi cada pagina nueva arranca desde el principio
   const location = useLocation()
 
   useEffect(() => {

@@ -21,7 +21,7 @@ function Navbar(props) {
       <div className={`container ${styles.contenido}`}>
         {}
         <Link to="/" className={styles.marca} onClick={cerrarMenu}>
-          <img src="/dulce-realeza/img/logo.svg" alt="Logo de Dulce Realeza" width="44" height="44" />
+          <img src="/dulce-realeza/img/logo-header.jpg" alt="Logo de Dulce Realeza" width="44" height="44" />
           <span>Dulce Realeza</span>
         </Link>
         {}

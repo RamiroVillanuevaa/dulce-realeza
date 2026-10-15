@@ -39,7 +39,7 @@ function Inicio(props) {
               </Link>
             </div>
           </div>
-          <img src="/dulce-realeza/img/logo.svg" alt="Logo de Dulce Realeza" className={styles.logo} />
+          <img src="/dulce-realeza/img/logo.jpg" alt="Logo de Dulce Realeza" className={styles.logo} />
         </div>
       </section>
       {/* aca termina la portada */}
