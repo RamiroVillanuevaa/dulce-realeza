@@ -7,10 +7,10 @@ import styles from './Inicio.module.css'
 
 // las categorias de la tienda, cada una con la foto que la representa
 const categorias = [
-  { nombre: 'Pastelería', imagen: '/dulce-realeza/img/cheesecake-oreo.svg' },
-  { nombre: 'Panadería', imagen: '/dulce-realeza/img/medialunas.svg' },
-  { nombre: 'Salados', imagen: '/dulce-realeza/img/tostado.svg' },
-  { nombre: 'Cafetería', imagen: '/dulce-realeza/img/cafe-con-leche.svg' },
+  { nombre: 'Pastelería', imagen: '/dulce-realeza/img/cheesecake-oreo.jpg' },
+  { nombre: 'Panadería', imagen: '/dulce-realeza/img/medialunas.jpg' },
+  { nombre: 'Salados', imagen: '/dulce-realeza/img/tostado.jpg' },
+  { nombre: 'Cafetería', imagen: '/dulce-realeza/img/cafe-con-leche.jpg' },
   { nombre: 'Regalos', imagen: '/dulce-realeza/img/caja-regalo.svg' }
 ]
 
