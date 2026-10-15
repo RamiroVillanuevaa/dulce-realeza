@@ -27,7 +27,7 @@ function Productos(props) {
   // aca arrancan los filtros, uno despues del otro
   // 1) por nombre (es el ejemplo del enunciado)
   const porNombre = productos.filter(producto =>
-    producto.nombre.toLowerCase().includes(busqueda.toLowerCase())
+    producto.nombre.toLowerCase().startsWith(busqueda.toLowerCase())
   )
   // 2) por categoria: si esta en "Todas" pasan todos
   const porCategoria = porNombre.filter(producto =>
@@ -94,7 +94,7 @@ function Productos(props) {
         ) : (
           <div className="grilla">
             {productosFiltrados.map(producto => (
-              <ProductoCard key={producto.id} producto={producto} agregarAlCarrito={props.agregarAlCarrito} />
+              <ProductoCard key={producto.id} producto={producto} carrito={props.carrito} agregarAlCarrito={props.agregarAlCarrito} cambiarCantidad={props.cambiarCantidad} eliminarDelCarrito={props.eliminarDelCarrito} />
             ))}
           </div>
         )}

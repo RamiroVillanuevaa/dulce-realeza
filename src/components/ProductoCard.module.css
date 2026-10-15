@@ -67,6 +67,19 @@
   margin-top: auto;
 }
 
+/* los botones de - y + con la cantidad en el medio (igual que en el carrito) */
+.cantidad {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.numero {
+  min-width: 24px;
+  text-align: center;
+  font-weight: 700;
+}
+
 /* cartelito que aparece abajo de los botones al agregar */
 .mensaje {
   margin: 10px 0 0;

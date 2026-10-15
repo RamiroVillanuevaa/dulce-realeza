@@ -67,7 +67,7 @@ function Carrito(props) {
         <p className="texto-chico">Último paso</p>
         <h1>Finalizar compra</h1>
         <p className={styles.pedidoCorto}>
-          Tu pedido: {cantidadTotal} {cantidadTotal === 1 ? 'producto' : 'productos'} · Total <strong>$ {total}</strong>
+          Tu pedido: {cantidadTotal} {cantidadTotal === 1 ? 'producto' : 'productos'} · Total <strong>$ {total.toLocaleString('es-AR')}</strong>
         </p>
         {/* le pasamos dos funciones por props:
             confirmarCompra para que nos mande los datos y volver para cerrar el formulario */}
@@ -105,7 +105,7 @@ function Carrito(props) {
           </p>
           <p className={`${styles.fila} ${styles.total}`}>
             <span>Total</span>
-            <span>$ {total}</span>
+            <span>$ {total.toLocaleString('es-AR')}</span>
           </p>
           {/* este boton no cambia de pagina: da vuelta el estado y se muestra el formulario */}
           <Button variant="dark" className={styles.boton} onClick={() => setMostrarFormulario(true)}>

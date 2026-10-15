@@ -22,13 +22,13 @@ function ResumenPedido(props) {
         {pedido.productos.map(item => (
           <li key={item.id} className={styles.renglon}>
             <span>{item.cantidad} x {item.nombre}</span>
-            <span>$ {item.precio * item.cantidad}</span>
+            <span>$ {(item.precio * item.cantidad).toLocaleString('es-AR')}</span>
           </li>
         ))}
       </ul>
       <p className={`${styles.renglon} ${styles.total}`}>
         <span>Total ({pedido.cantidad} {pedido.cantidad === 1 ? 'producto' : 'productos'})</span>
-        <span>$ {pedido.total}</span>
+        <span>$ {pedido.total.toLocaleString('es-AR')}</span>
       </p>
       {/* aca termina el listado de productos */}
 

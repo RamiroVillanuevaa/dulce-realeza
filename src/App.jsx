@@ -95,8 +95,8 @@ function App() {
       {/* aca arrancan las rutas */}
       <main>
         <Routes>
-          <Route path="/" element={<Inicio agregarAlCarrito={agregarAlCarrito} />} />
-          <Route path="/productos" element={<Productos agregarAlCarrito={agregarAlCarrito} />} />
+          <Route path="/" element={<Inicio carrito={carrito} agregarAlCarrito={agregarAlCarrito} cambiarCantidad={cambiarCantidad} eliminarDelCarrito={eliminarDelCarrito} />} />
+          <Route path="/productos" element={<Productos carrito={carrito} agregarAlCarrito={agregarAlCarrito} cambiarCantidad={cambiarCantidad} eliminarDelCarrito={eliminarDelCarrito} />} />
           <Route path="/producto/:id" element={<DetalleProducto agregarAlCarrito={agregarAlCarrito} />} />
           <Route path="/carrito" element={
             <Carrito

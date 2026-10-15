@@ -59,7 +59,7 @@ function DetalleProducto(props) {
         <p className="texto-chico">{producto.categoria}</p>
         <h1 className={styles.nombre}>{producto.nombre}</h1>
         {producto.etiqueta !== '' ? <span className={styles.etiqueta}>{producto.etiqueta}</span> : null}
-        <p className={styles.precio}>$ {producto.precio}</p>
+        <p className={styles.precio}>$ {producto.precio.toLocaleString('es-AR')}</p>
         <p>{producto.descripcionLarga}</p>
 
         {/* lista de caracteristicas, sale del array del producto con un map */}

@@ -16,7 +16,7 @@ function CarritoItem(props) {
       {/* aca arranca el nombre y el precio por unidad */}
       <div className={styles.info}>
         <h5 className={styles.nombre}>{item.nombre}</h5>
-        <p className={styles.unitario}>$ {item.precio} c/u</p>
+        <p className={styles.unitario}>$ {item.precio.toLocaleString('es-AR')} c/u</p>
       </div>
       {/* aca termina el nombre y el precio por unidad */}
 
@@ -43,7 +43,7 @@ function CarritoItem(props) {
 
       {/* aca arranca el subtotal y el boton de eliminar */}
       <div className={styles.final}>
-        <p className={styles.subtotal}>$ {subtotal}</p>
+        <p className={styles.subtotal}>$ {subtotal.toLocaleString('es-AR')}</p>
         <Button variant="outline-danger" onClick={() => props.eliminarDelCarrito(item.id)}>
           Eliminar
         </Button>

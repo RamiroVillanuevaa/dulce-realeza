@@ -64,7 +64,7 @@ function Inicio(props) {
         <h2 className={styles.tituloSeccion}>Destacados</h2>
         <div className="grilla">
           {destacados.map(producto => (
-            <ProductoCard key={producto.id} producto={producto} agregarAlCarrito={props.agregarAlCarrito} />
+            <ProductoCard key={producto.id} producto={producto} carrito={props.carrito} agregarAlCarrito={props.agregarAlCarrito} cambiarCantidad={props.cambiarCantidad} eliminarDelCarrito={props.eliminarDelCarrito} />
           ))}
         </div>
         <div className={styles.centrado}>

@@ -8,6 +8,8 @@ import styles from './ProductoCard.module.css'
 function ProductoCard(props) {
   const producto = props.producto
   const sinStock = producto.stock === 0
+  // buscamos si este producto ya esta en el carrito (si no esta, find devuelve undefined)
+  const enCarrito = props.carrito.find(item => item.id === producto.id)
 
   // el texto del cartelito que aparece al tocar agregar ('' = no se muestra nada)
   const [mensaje, setMensaje] = useState('')
@@ -20,6 +22,17 @@ function ProductoCard(props) {
       setMensaje('¡Sumado al carrito!')
     } else {
       setMensaje('No queda más stock.')
+    }
+  }
+
+  // a diferencia del carrito, aca el - puede llegar a 0:
+  // si queda 1 y tocan -, sacamos el producto del carrito y vuelve a aparecer el boton de agregar
+  function manejarRestar() {
+    if (enCarrito.cantidad === 1) {
+      props.eliminarDelCarrito(producto.id)
+      setMensaje('')
+    } else {
+      props.cambiarCantidad(producto.id, -1)
     }
   }
 
@@ -42,17 +55,34 @@ function ProductoCard(props) {
         <p className="card-text">{producto.descripcion}</p>
 
         {/* precio y stock */}
-        <p className={styles.precio}>$ {producto.precio}</p>
+        <p className={styles.precio}>$ {producto.precio.toLocaleString('es-AR')}</p>
         <p className={sinStock ? styles.sinStock : styles.stock}>
           {sinStock ? 'Sin stock' : `Stock: ${producto.stock}`}
         </p>
 
-        {/* aca arrancan los botones, si no hay stock el de agregar se desactiva */}
+        {/* aca arrancan los botones, si no hay stock el de agregar se desactiva
+            si el producto ya esta en el carrito, en vez de agregar mostramos el - y + (igual que en el carrito) */}
         <div className={styles.botones}>
           <Link to={`/producto/${producto.id}`} className="btn btn-outline-dark">Ver detalle</Link>
-          <Button variant="dark" onClick={manejarAgregar} disabled={sinStock}>
-            {sinStock ? 'Sin stock' : 'Agregar'}
-          </Button>
+          {enCarrito ? (
+            <div className={styles.cantidad}>
+              <Button variant="outline-dark" onClick={manejarRestar}>
+                -
+              </Button>
+              <span className={styles.numero}>{enCarrito.cantidad}</span>
+              <Button
+                variant="outline-dark"
+                onClick={() => props.cambiarCantidad(producto.id, 1)}
+                disabled={enCarrito.cantidad === producto.stock}
+              >
+                +
+              </Button>
+            </div>
+          ) : (
+            <Button variant="dark" onClick={manejarAgregar} disabled={sinStock}>
+              {sinStock ? 'Sin stock' : 'Agregar'}
+            </Button>
+          )}
         </div>
         {/* aca terminan los botones */}
 
