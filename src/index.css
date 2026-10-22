@@ -35,7 +35,7 @@ a {
   color: #6b5414;
 }
 
-/* aca arranca la grilla de productos (la usan inicio y productos)*/
+/* aca arranca la grilla de productos la usan inicio y productos*/
 .grilla {
   display: grid;
   grid-template-columns: 1fr;
@@ -53,9 +53,9 @@ a {
     grid-template-columns: 1fr 1fr 1fr 1fr;
   }
 }
-/* aca termina la grilla */
+/* termina la grilla */
 
-/* aca arranca el footer */
+/* arranca el footer */
 .pie {
   margin-top: 48px;
   padding: 24px 16px;
@@ -67,4 +67,4 @@ a {
 .pie p {
   margin: 4px 0;
 }
-/* aca termina el footer */
+/* termina el footer */

@@ -115,9 +115,9 @@ function App() {
           <Route path="/contacto" element={<Contacto />} />
         </Routes>
       </main>
-      {/* aca terminan las rutas */}
+      {/*  terminan las rutas */}
 
-      {/* aca va el footer */}
+      {/* footer */}
       <Footer />
     </>
   )

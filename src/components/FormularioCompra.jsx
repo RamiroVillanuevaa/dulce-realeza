@@ -1,4 +1,4 @@
-// aca arrancan los imports
+//  arrancan los imports
 import { useState } from 'react'
 import Button from 'react-bootstrap/Button'
 import styles from './FormularioCompra.module.css'
@@ -9,7 +9,7 @@ import styles from './FormularioCompra.module.css'
 const locales = ['Zárate 52, San Antonio de Padua']
 
 function FormularioCompra(props) {
-  // aca arrancan los estados de los campos, uno por cada campo (clase 5)
+  // aca arrancan los estados de los campos, uno por cada campo 
   const [nombre, setNombre] = useState('')
   const [apellido, setApellido] = useState('')
   const [email, setEmail] = useState('')
@@ -38,7 +38,7 @@ function FormularioCompra(props) {
     const nuevosErrores = { nombre: '', apellido: '', email: '', telefono: '', direccion: '' }
     let hayErrores = false
 
-    // trim saca los espacios, asi "   " cuenta como vacio (clase 2)
+    // trim saca los espacios, asi "   " cuenta como vacio 
     if (nombre.trim() === '') {
       nuevosErrores.nombre = 'Ingresá tu nombre.'
       hayErrores = true
@@ -67,7 +67,7 @@ function FormularioCompra(props) {
 
     setErrores(nuevosErrores)
 
-    // si esta todo bien le pasamos los datos al carrito (el padre) con la funcion que nos dio por props
+    // si esta todo bien le pasamos los datos al carrito (padre) con la funcion que nos dio por props
     // armamos el objeto escribiendo cada propiedad
     if (!hayErrores) {
       props.confirmarCompra({
@@ -94,7 +94,7 @@ function FormularioCompra(props) {
     // es controlado: cada input muestra lo que hay en su estado (value) y lo actualiza con onChange
     <form className={styles.formulario} onSubmit={confirmarCompra}>
       {/* aca arranca la fila de nombre y apellido
-          cada onChange guarda lo que escriben en su estado, igual que el ejemplo de la clase 5 */}
+          cada onChange guarda lo que escriben en su estado */}
       <div className={styles.fila}>
         <label className={styles.etiqueta}>
           Nombre *
@@ -145,7 +145,7 @@ function FormularioCompra(props) {
         </button>
       </div>
 
-      {/* segun lo que eligieron mostramos una cosa u otra (ternario en jsx, clase 5)
+      {/* segun lo que eligieron mostramos una cosa u otra (ternario)
           - envio a domicilio: el campo para escribir la direccion
           - retiro en el local: la lista de locales armada con map */}
       {entrega === 'Envío a domicilio' ? (

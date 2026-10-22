@@ -25,15 +25,15 @@ function Productos(props) {
   }
 
   // aca arrancan los filtros, uno despues del otro
-  // 1) por nombre (es el ejemplo del enunciado)
+  // 1 por nombre (es el ejemplo del enunciado)
   const porNombre = productos.filter(producto =>
     producto.nombre.toLowerCase().startsWith(busqueda.toLowerCase())
   )
-  // 2) por categoria: si esta en "Todas" pasan todos
+  // 2 por categoria: si esta en "Todas" pasan todos
   const porCategoria = porNombre.filter(producto =>
     categoria === 'Todas' || producto.categoria === categoria
   )
-  // 3) solo con stock: si el boton esta apagado pasan todos
+  // 3 solo con stock: si el boton esta apagado pasan todos
   const productosFiltrados = porCategoria.filter(producto =>
     !soloConStock || producto.stock > 0
   )

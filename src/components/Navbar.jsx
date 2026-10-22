@@ -11,7 +11,7 @@ function Navbar(props) {
     setMenuAbierto(false)
   }
 
-  // NavLink nos avisa con isActive si el link es el de la pagina actual (clase 7)
+  // NavLink nos avisa con isActive si el link es el de la pagina actual
   // si esta activo le sumamos la clase "activo" para marcarlo
   const claseLink = ({ isActive }) => isActive ? `${styles.link} ${styles.activo}` : styles.link
 

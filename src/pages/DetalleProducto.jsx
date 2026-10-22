@@ -8,7 +8,7 @@ import styles from './DetalleProducto.module.css'
 
 function DetalleProducto(props) {
   // aca arranca la busqueda del producto
-  // el id viene de la url (/producto/3) y llega como texto "3" (clase 7)
+  // el id viene de la url (/producto/3) 
   // por eso lo pasamos a numero con Number y despues comparamos con ===: Number("3") da 3
   const { id } = useParams()
   const producto = productos.find(p => p.id === Number(id))

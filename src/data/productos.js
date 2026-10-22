@@ -186,6 +186,6 @@ const productos = [
     etiqueta: ''
   }
 ]
-// aca termina el catalogo
+// fin  del catalogo
 
 export default productos
