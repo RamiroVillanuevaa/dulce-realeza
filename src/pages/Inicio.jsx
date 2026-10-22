@@ -45,7 +45,7 @@ function Inicio(props) {
       {/* aca termina la portada */}
 
       {/* aca arrancan las categorias
-          cada una te lleva al catalogo ya filtrado con un query string (clase 7) */}
+          cada una te lleva al catalogo ya filtrado con un query string  */}
       <section className="container">
         <h2 className={styles.tituloSeccion}>Nuestras categorías</h2>
         <div className={styles.categorias}>
