@@ -13,7 +13,7 @@ Deploy: https://ramirovillanuevaa.github.io/dulce-realeza/
 
 ## Descripción
 
-Tienda online de Dulce Realeza, una panadería y cafetería de San Antonio de Padua.
+Dulce Realeza es una tienda online, una panadería y cafetería ubicada de San Antonio de Padua.
 Se puede recorrer el catálogo, buscar y filtrar productos, ver el detalle de cada uno,
 armar el carrito y completar los datos para hacer una compra simulada.
 
