@@ -43,7 +43,7 @@ npm start
 
 ```bash
 git clone <url-de-este-repo>
-cd unahur-anti-social-net
+cd dulce-realeza-con-backend
 npm install
 npm run dev
 ```
