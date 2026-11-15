@@ -39,11 +39,11 @@ node seed.js
 npm start
 ```
 
-**2. FrontEnd**
+**2. FrontEnd** (está en la rama `tp2` del repo; en `main` está el TP1)
 
 ```bash
-git clone <url-de-este-repo>
-cd dulce-realeza-con-backend
+git clone -b tp2 https://github.com/RamiroVillanuevaa/dulce-realeza.git
+cd dulce-realeza
 npm install
 npm run dev
 ```
