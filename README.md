@@ -1,9 +1,9 @@
 # UnaHur Anti-Social Net
 
-FrontEnd en React + TypeScript para la red social "UnaHur Anti-Social Net".
-Trabajo Práctico 2 de Construcción de Interfaces de Usuario (UNAHUR, 2.º cuatrimestre 2026).
+FrontEnd en React, TypeScript   red social "UnaHur Anti-Social Net".
+Trabajo Práctico 2  Construcción de Interfaces de Usuario (UNAHUR, 2.º cuatrimestre 2026).
 
-Se puede ver el feed de publicaciones, entrar al detalle de cada una, comentar, registrarse,
+Permite ver el feed de publicaciones, entrar al detalle de cada una, comentar, registrarse,
 iniciar sesión y crear publicaciones propias con imágenes y etiquetas.
 
 ## Integrantes
@@ -23,7 +23,7 @@ iniciar sesión y crear publicaciones propias con imágenes y etiquetas.
 
 Usamos el BackEnd que da la cátedra: https://github.com/lucasfigarola/backend-api
 
-Corre en `http://localhost:3001`. Si se cambia el puerto, hay que cambiarlo también en `src/api.ts`.
+Corre en `http://localhost:3001`. 
 
 ## Cómo correrlo en local
 
@@ -52,7 +52,7 @@ Abrir http://localhost:5173
 
 ## Usuarios de prueba
 
-El `seed.js` del BackEnd crea los usuarios `luna` y `sol`.
+El `seed.js` del BackEnd crea los usuarios fantasia: `luna` y `sol`.
 El login es simulado: la contraseña es `123456` para todos.
 
 ## Rutas
